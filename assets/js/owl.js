@@ -3446,3 +3446,26 @@
 	}
 
 })(window.Zepto || window.jQuery, window, document);
+
+
+
+$(document).ready(function() {
+    $(".three-item-carousel").owlCarousel({
+        items: 5,  // Number of items to display at a time
+        loop: true,  // Infinite loop
+        margin: 0,  // Space between items
+        nav: true,  // Show next/prev buttons
+        dots: false,  // Disable dots
+        responsive: {
+            0: {
+                items: 1  // Show 1 item on smaller screens
+            },
+            600: {
+                items: 2  // Show 2 items on medium screens
+            },
+            1000: {
+                items: 4  // Show 3 items on larger screens
+            }
+        }
+    });
+});
