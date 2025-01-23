@@ -9664,3 +9664,9 @@ h4 a:hover{
   margin-top: -105px;
   z-index: 1;
 }
+
+.main-menu .navbar-collapse {
+  padding: 0px;
+  display: inline-block !important;
+  margin: 25px 0px 0px 200px;
+}
