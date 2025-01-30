@@ -176,8 +176,9 @@
 @media only screen and (max-width: 991px){
 
   .banner-carousel .content-box .content-bg{
-    display: none;
+    visibility:visible;
   }
+
 
   .banner-section.style-one .banner-carousel .content-box .text{
     max-width: 100%;
