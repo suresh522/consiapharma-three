@@ -589,3 +589,49 @@
 })(window.jQuery);
 
 
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const applyButtons = document.querySelectorAll(".apply-btn");
+    const jobTitle = document.getElementById("jobTitle");
+    const jobPositionInput = document.getElementById("jobPosition");
+
+    // Update modal content based on clicked position
+    applyButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            let position = this.getAttribute("data-position");
+            jobTitle.textContent = position;
+            jobPositionInput.value = position;
+        });
+    });
+
+	
+    // Handle Form Submission
+    document.getElementById("applicationForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let formData = new FormData();
+        formData.append("name", document.getElementById("applicantName").value);
+        formData.append("email", document.getElementById("applicantEmail").value);
+        formData.append("resume", document.getElementById("resume").files[0]);
+        formData.append("position", document.getElementById("jobPosition").value);
+
+        // Send data to the backend for processing
+        fetch("send-email.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Application Submitted Successfully!");
+            document.getElementById("applicationForm").reset();
+            var applyModal = bootstrap.Modal.getInstance(document.getElementById("applyModal"));
+            applyModal.hide();
+        })
+        .catch(error => console.error("Error:", error));
+    });
+});

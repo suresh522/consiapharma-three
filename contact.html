@@ -351,7 +351,7 @@
             <div class="auto-container">
                 <div class="sec-title centred">
                     <!-- <h6>Research Topic</h6> -->
-                    <h2 class="text-center">Have Any Questins Contact With Us</h2>
+                    <h2 class="text-center">Have Any Questions Contact With Us</h2>
                 </div>
                 <div class="form-inner">
                     <form method="post" action="sendemail.php" id="contact-form" class="default-form"> 
@@ -365,9 +365,18 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                 <input type="text" name="phone" required="" placeholder="Phone">
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="subject" required="" placeholder="Subject">
-                            </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <select name="subject-tag" required="" class="form-control">
+                                        <option value="" disabled selected>Select Subject</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Product Information">Product Information</option>
+                                        <option value="Technical Support">Technical Support</option>
+                                        <option value="Business Collaboration">Business Collaboration</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                                <!-- <input type="text" name="subject" required="" placeholder="Subject"> -->
+
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <textarea name="message" placeholder="Your Message"></textarea>
                             </div>
