@@ -10109,6 +10109,10 @@ h4 a:hover{
 display: none !important;
 }
 
+.career-img img{
+  border-radius: 10px !important;
+}
+
 @media (min-width:320px) and (max-width:480px){
 
   .image_block_1 .image-box .image img {
