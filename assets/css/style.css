@@ -9708,7 +9708,7 @@ h4 a:hover{
   position:relative;
 }
 .whatsapp-icon .fa-whatsapp{
-  position: absolute;
+  position: fixed !important;
   bottom: 50px;
   left: 50px;
   font-size:60px;
