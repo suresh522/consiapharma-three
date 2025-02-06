@@ -10113,6 +10113,17 @@ display: none !important;
   border-radius: 10px !important;
 }
 
+.service-section:before {
+  position: absolute;
+  content: '';
+  background: #e9f8f8;
+  width: 100%;
+  height: calc(130% - 90px) !important;
+  left: 0px;
+  top: 0px;
+  clip-path: polygon(0% 0%, 1000% 0%, 1000% 92%, 0% 95%, 0% 0%) !important;
+}
+
 @media (min-width:320px) and (max-width:480px){
 
   .image_block_1 .image-box .image img {
