@@ -595,43 +595,101 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const applyButtons = document.querySelectorAll(".apply-btn");
-    const jobTitle = document.getElementById("jobTitle");
-    const jobPositionInput = document.getElementById("jobPosition");
 
-    // Update modal content based on clicked position
-    applyButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            let position = this.getAttribute("data-position");
-            jobTitle.textContent = position;
-            jobPositionInput.value = position;
-        });
+// popupform sumbission
+
+function submitposition() {
+    
+    // Your existing validation and submission logic
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let positionType = document.getElementById("jobPosition").value.trim();
+    let selectfile = document.getElementById("selectfile").value.trim();
+
+    if (name === '') {
+        alert("Name field is required");
+        return;
+    }
+
+    if (email === '') {
+        alert("Email field is required");
+        return;
+    }
+
+    if (phone === '') {
+        alert("Phone field is required");
+        return;
+    }
+
+    // if (position === '') {
+    //     alert("Position field is required");
+    //     return;
+    // }
+
+    if (selectfile === '') {
+        alert("Please select a file to upload");
+        return;
+    }
+
+    // Map position to position_type
+    var position_type = '';
+    switch (positionType) {
+        case '1':
+            position_type = 'BUSINESS MANAGER';
+            break;
+        case '2':
+            position_type = 'AREA BUSINESS MANAGER';
+            break;
+        case '3':
+            position_type = 'REGIONAL MANAGER';
+            break;
+        case '4':
+            position_type = 'SALES MANAGER';
+            break;
+        default:
+            alert('Invalid position type selected.');
+            return;
+    }
+
+
+let formdata={
+	name:name,
+	email:email,
+	phone:phone,
+	positionType:position_type,
+	selectfile:selectfile
+
+}
+
+emailjs.send('service_bjq4py6', 'template_qj6jxgq', formdata)
+.then(function(response) {
+	console.log('SUCCESS!', response.status, response.text);
+	alert('Message sent successfully!');
+	document.getElementById("applicationForm").reset();
+	$('#applyModal').modal('hide'); 
+}, function(error) {
+	console.log('FAILED...', error);
+	alert('Failed to send message.');
+});
+}
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.btn-pack');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const positionId = this.getAttribute('data-position');
+        updateModalForm(positionId);
+      });
     });
 
-	
-    // Handle Form Submission
-    document.getElementById("applicationForm").addEventListener("submit", function (event) {
-        event.preventDefault();
+    function updateModalForm(positionId) {
+      const selectPosition = document.getElementById('positionType');
+      selectPosition.value = positionId;
+    }
 
-        let formData = new FormData();
-        formData.append("name", document.getElementById("applicantName").value);
-        formData.append("email", document.getElementById("applicantEmail").value);
-        formData.append("resume", document.getElementById("resume").files[0]);
-        formData.append("position", document.getElementById("jobPosition").value);
-
-        // Send data to the backend for processing
-        fetch("send-email.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert("Application Submitted Successfully!");
-            document.getElementById("applicationForm").reset();
-            var applyModal = bootstrap.Modal.getInstance(document.getElementById("applyModal"));
-            applyModal.hide();
-        })
-        .catch(error => console.error("Error:", error));
-    });
 });

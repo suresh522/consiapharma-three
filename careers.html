@@ -371,7 +371,7 @@
                                 <!-- <span>Duan Ling, et al., Horticultural Plant Journal, 2019</span> -->
                                 <p>Responsible for strategic planning, team leadership, client relations, and market analysis to drive growth in the pharmaceutical sector.</p>
                                 <div class="btn-box">
-                                    <a href="#applyModal" class="theme-btn-two apply-btn" data-bs-toggle="modal" data-position="Business Manager">
+                                    <a href="#applyModal" class="theme-btn-two apply-btn btn-pack" data-bs-toggle="modal" data-position="Business Manager">
                                         Apply Now
                                     </a>
                                 </div>
@@ -386,7 +386,7 @@
                                 <!-- <span>Duan Ling, et al., Horticultural Plant Journal, 2019</span> -->
                                 <p>Results-driven Area Business Manager with expertise in leading sales teams, implementing strategies, and building strong healthcare relationships in the pharmaceutical industry.</p>
                                 <div class="btn-box">
-                                    <a href="#applyModal-two" class="theme-btn-two apply-btn" data-bs-toggle="modal" data-position="Area Business Manager">Apply Now</a>
+                                    <a href="#applyModal" class="theme-btn-two apply-btn btn-pack" data-bs-toggle="modal" data-position="Area Business Manager">Apply Now</a>
                                 </div>
                             </div>
                         </div>
@@ -398,7 +398,7 @@
                                 <!-- <span>Duan Ling, et al., Horticultural Plant Journal, 2019</span> -->
                                 <p>Experienced Regional Manager in the pharmaceutical industry, skilled in overseeing operations, leading sales teams, and driving business growth.</p>
                                 <div class="btn-box">
-                                    <a href="#applyModal-three" class="theme-btn-two apply-btn" data-bs-toggle="modal" data-position="Regional Manager">Apply Now</a>
+                                    <a href="#applyModal" class="theme-btn-two apply-btn btn-pack" data-bs-toggle="modal" data-position="Regional Manager">Apply Now</a>
                                 </div>
                                 
                             </div>
@@ -411,7 +411,7 @@
                                 <!-- <span>Duan Ling, et al., Horticultural Plant Journal, 2019</span> -->
                                 <p>Skilled in building strong relationships with healthcare professionals, managing key accounts, and analyzing market trends to expand market share and achieve sales targets."</p>
                                 <div class="btn-box">
-                                    <a href="#applyModal-four" class="theme-btn-two apply-btn" data-bs-toggle="modal" data-position="Sales Manager">Apply Now</a>
+                                    <a href="#applyModal" class="theme-btn-two apply-btn btn-pack" data-bs-toggle="modal" data-position="Sales Manager">Apply Now</a>
                                 </div>
                                
                             </div>
@@ -427,12 +427,12 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="applyModalLabel">Apply for Business Manager</h5>
+                        <h5 class="modal-title" id="applyModalLabel">Apply For Pharmaceutical Management Positions</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <!-- <p>Fill in your details to apply for the Business Manager position.</p> -->
-                        <form id="applicationForm" method="post">
+                        <form id="applicationForm" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
@@ -441,6 +441,113 @@
                               
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
                             </div>
+
+                            <div class="mb-3">
+                              
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <input type="hidden" id="jobPosition" name="jobPosition">
+
+                            <div class="mb-3">
+                               
+                                <input type="file" name="selectfile" id="selectfile" class="form-control">
+                            </div>
+                            <button type="button" onclick="submitposition()" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- 
+        <div class="modal fade" id="applyModal-two" tabindex="-2" aria-labelledby="applyModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applyModalLabel">Apply for Area Business Manager</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       
+                        <form id="applicationForm">
+                            <div class="mb-3">
+                              
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                              
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                            </div>
+
+                      
+                            
+                            <input type="hidden" id="jobPosition" name="jobPosition">
+
+                            <div class="mb-3">
+                             
+                                <input type="file" class="form-control" id="resume">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="modal fade" id="applyModal-three" tabindex="-3" aria-labelledby="applyModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applyModalLabel">Apply for Regional Manager</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                        <form id="applicationForm">
+                            <div class="mb-3">
+                             
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                           
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                            </div>
+
+                        
+                            
+                            <input type="hidden" id="jobPosition" name="jobPosition">
+
+                            <div class="mb-3">
+                             
+                                <input type="file" class="form-control" id="resume">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="modal fade" id="applyModal-four" tabindex="-4" aria-labelledby="applyModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applyModalLabel">Apply for Sales Manager</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                        <form id="applicationForm">
+                            <div class="mb-3">
+                              
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                              
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                            </div>
+
+                          
                             
                             <input type="hidden" id="jobPosition" name="jobPosition">
 
@@ -453,118 +560,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="modal fade" id="applyModal-two" tabindex="-2" aria-labelledby="applyModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="applyModalLabel">Apply for Area Business Manager</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- <p>Fill in your details to apply for the Business Manager position.</p> -->
-                        <form id="applicationForm">
-                            <div class="mb-3">
-                                <!-- <label for="name" class="form-label">Full Name</label> -->
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="mb-3">
-                                <!-- <label for="email" class="form-label">Email Address</label> -->
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
-                            </div>
-
-                            <!-- <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="text" class="form-control" name="select-position" id="select-position" placeholder="Enter Your Position">
-                            </div> -->
-                            
-                            <input type="hidden" id="jobPosition" name="jobPosition">
-
-                            <div class="mb-3">
-                                <!-- <label for="resume" class="form-label">Upload Resume</label> -->
-                                <input type="file" class="form-control" id="resume">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="applyModal-three" tabindex="-3" aria-labelledby="applyModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="applyModalLabel">Apply for Regional Manager</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- <p>Fill in your details to apply for the Business Manager position.</p> -->
-                        <form id="applicationForm">
-                            <div class="mb-3">
-                                <!-- <label for="name" class="form-label">Full Name</label> -->
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="mb-3">
-                                <!-- <label for="email" class="form-label">Email Address</label> -->
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
-                            </div>
-
-                            <!-- <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="text" class="form-control" name="select-position" id="select-position" placeholder="Enter Your Position">
-                            </div> -->
-                            
-                            <input type="hidden" id="jobPosition" name="jobPosition">
-
-                            <div class="mb-3">
-                                <!-- <label for="resume" class="form-label">Upload Resume</label> -->
-                                <input type="file" class="form-control" id="resume">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="applyModal-four" tabindex="-4" aria-labelledby="applyModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="applyModalLabel">Apply for Sales Manager</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- <p>Fill in your details to apply for the Business Manager position.</p> -->
-                        <form id="applicationForm">
-                            <div class="mb-3">
-                                <!-- <label for="name" class="form-label">Full Name</label> -->
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="mb-3">
-                                <!-- <label for="email" class="form-label">Email Address</label> -->
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
-                            </div>
-
-                            <!-- <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="text" class="form-control" name="select-position" id="select-position" placeholder="Enter Your Position">
-                            </div> -->
-                            
-                            <input type="hidden" id="jobPosition" name="jobPosition">
-
-                            <div class="mb-3">
-                                <!-- <label for="resume" class="form-label">Upload Resume</label> -->
-                                <input type="file" class="form-control" id="resume">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
 
 
                 <!-- about-section -->
@@ -608,8 +604,14 @@
 
 
                         <!-- service-section -->
-        <section class="service-section pb-5">
+        <section class="service-section pb-4">
             <div class="auto-container">
+                <h2 class="pb-3 text-center">Building a Future of Excellence: Our Core Values</h2>
+                
+                <div class="bold-text">
+                    <p class="text-center">Our values define who we are, fostering a culture of trust, collaboration, and growth while empowering employees to excel and innovate.</p>
+                </div>
+                
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 service-block">
                         <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -654,7 +656,7 @@
         <!-- service-section end -->
         <!-- news-section -->
 
-        <section class="slider">
+        <section class="b">
             <div class="scroll-container">
                 <div class="wrapper">
                     <!-- Original Items -->
@@ -814,7 +816,7 @@
             <div class="footer-bottom centred">
                 <div class="auto-container">
                     <div class="copyright">
-                        <p><a href="#">consia pharmaceticals</a> &copy; 2025 All Right Reserved</p>
+                        <p><a href="#">consia pharmaceticals</a> &copy; 2025 All Rights Reserved</p>
                     </div>
                 </div>
             </div>
@@ -853,6 +855,19 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- emailjs configuration -->
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "PvPHll934cp4sHNAM",
+  });
+})();
+</script>
 
 
 

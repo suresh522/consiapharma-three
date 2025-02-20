@@ -1,0 +1,3 @@
+User Agent: *
+Disallow:
+Sitemap:https://consiapharma.in/sitemap.xml
