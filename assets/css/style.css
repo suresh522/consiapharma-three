@@ -9710,7 +9710,7 @@ h4 a:hover{
 .whatsapp-icon .fa-whatsapp{
   position: fixed !important;
   bottom: 50px;
-  left: 50px;
+  left: 32px;
   font-size:60px;
   color: #22b6af;
 }
@@ -10289,9 +10289,7 @@ display: none !important;
   height: 39vh !important;
 }
 
-.image-box img{
 
-}
 
 .service-block-two .product-img {
   position: relative;
@@ -10329,6 +10327,50 @@ display: none !important;
 
 .research-block-two .inner-box {
   margin-bottom: 60px !important;
+}
+
+.mobile-menu .navigation li > a:before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  height:0;
+  border-left:0px solid #fff !important;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; 
+}
+
+
+
+.main-header .logo-box .logo {
+  margin: 0 -16px !important;
+}
+
+.pull-left {
+  float: inline-end;
+}
+
+.menu-area .mobile-nav-toggler {
+  position: relative;
+  float: right;
+  font-size: 40px;
+  line-height: 50px;
+  cursor: pointer;
+  color: #3786ff;
+  display: none;
+  top: -85px !important;
+}
+.clearfix::after {
+  display:contents !important;
+  clear: both;
+  content: "";
+}
+
+.menu-area{
+  height: 0px !important;
 }
 
 }

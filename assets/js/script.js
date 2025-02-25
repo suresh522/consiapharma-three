@@ -599,97 +599,147 @@
 // popupform sumbission
 
 function submitposition() {
-    
-    // Your existing validation and submission logic
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let phone = document.getElementById("phone").value.trim();
     let positionType = document.getElementById("jobPosition").value.trim();
-    let selectfile = document.getElementById("selectfile").value.trim();
+    let fileInput = document.getElementById("selectfile");
+    let selectedFile = fileInput.files[0];
 
-    if (name === '') {
+    if (!name) {
         alert("Name field is required");
         return;
     }
 
-    if (email === '') {
+    if (!email) {
         alert("Email field is required");
         return;
     }
 
-    if (phone === '') {
+    if (!phone) {
         alert("Phone field is required");
         return;
     }
 
-    // if (position === '') {
-    //     alert("Position field is required");
-    //     return;
-    // }
-
-    if (selectfile === '') {
+    if (!selectedFile) {
         alert("Please select a file to upload");
         return;
     }
 
-    // Map position to position_type
-    var position_type = '';
-    switch (positionType) {
-        case '1':
-            position_type = 'BUSINESS MANAGER';
-            break;
-        case '2':
-            position_type = 'AREA BUSINESS MANAGER';
-            break;
-        case '3':
-            position_type = 'REGIONAL MANAGER';
-            break;
-        case '4':
-            position_type = 'SALES MANAGER';
-            break;
-        default:
-            alert('Invalid position type selected.');
-            return;
-    }
+    let formdata = new FormData();
+    formdata.append("name", name);
+    formdata.append("email", email);
+    formdata.append("phone", phone);
+    formdata.append("positionType", positionType);
+    formdata.append("selectfile", selectedFile);
 
-
-let formdata={
-	name:name,
-	email:email,
-	phone:phone,
-	positionType:position_type,
-	selectfile:selectfile
-
+    emailjs.sendForm('service_bjq4py6', 'template_qj6jxgq', '#applicationForm','PvPHll934cp4sHNAM', formdata)
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message sent successfully!');
+        document.getElementById("applicationForm").reset();
+        $('#applyModal').modal('hide'); 
+    }, function(error) {
+        console.log('FAILED...', error);
+        alert('Failed to send message.');
+    });
 }
 
-emailjs.send('service_bjq4py6', 'template_qj6jxgq', formdata)
-.then(function(response) {
-	console.log('SUCCESS!', response.status, response.text);
-	alert('Message sent successfully!');
-	document.getElementById("applicationForm").reset();
-	$('#applyModal').modal('hide'); 
-}, function(error) {
-	console.log('FAILED...', error);
-	alert('Failed to send message.');
-});
-}
-
-
-
-
+// Update modal with selected position
 document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.btn-pack');
 
     buttons.forEach(button => {
-      button.addEventListener('click', function () {
-        const positionId = this.getAttribute('data-position');
-        updateModalForm(positionId);
-      });
+        button.addEventListener('click', function () {
+            const positionTitle = this.getAttribute('data-position');
+            document.getElementById('jobPosition').value = positionTitle;
+        });
     });
+});
 
-    function updateModalForm(positionId) {
-      const selectPosition = document.getElementById('positionType');
-      selectPosition.value = positionId;
+
+
+
+
+
+
+// Contact Form Submission
+function contactsubmit() {
+
+	// Get form fields
+	let name = document.getElementById("name").value.trim();
+	let email = document.getElementById("email").value.trim();
+	let phone = document.getElementById("phone").value.trim();
+	let subject = document.getElementById("subject").value.trim();
+	let message = document.getElementById("message").value.trim();
+
+	// Email validation regex
+	let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+	// Phone validation regex (Assuming 10-digit numbers)
+	let phonePattern = /^[0-9]{10}$/;
+
+	if (!name) {
+        alert("Name field is required");
+        return;
     }
 
-});
+    if (!email) {
+        alert("Email field is required");
+        return;
+    }
+
+    if (!phone) {
+        alert("Phone field is required");
+        return;
+    }
+
+    if (!subject) {
+        alert("Subject field is required");
+        return;
+    }
+
+	if (!message) {
+        alert("Message field is required");
+        return;
+    }
+
+
+	if (!emailPattern.test(email)) {
+		alert("Please enter a valid email address.");
+		return;
+	}
+
+	if (!phonePattern.test(phone)) {
+		alert("Please enter a valid 10-digit phone number.");
+		return;
+	}
+
+	// Prepare email parameters
+	let emailParams = {
+		name: name,
+		email: email,
+		phone: phone,
+		subject: subject,
+		message: message
+	};
+
+	// Send email via EmailJS
+	emailjs.sendForm("service_bjq4py6", "template_zts7fue", '#contact-form','PvPHll934cp4sHNAM', emailParams)
+	.then(function(response) {
+		alert("Message sent successfully!");
+		document.getElementById("contact-form").reset();
+	}, function(error) {
+		alert("Error sending message. Please try again.");
+		console.error("EmailJS Error:", error);
+	});
+}
+
+
+
+
+
+
+
+
+
