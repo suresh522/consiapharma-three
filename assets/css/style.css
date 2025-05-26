@@ -10427,6 +10427,10 @@ display: none !important;
     z-index: 1;
     height: 100vh !important;
 }
+.product-img img {
+    width: 100%;
+    height:auto !important;
+}
 
 }
 
