@@ -10343,7 +10343,7 @@ display: none !important;
   box-shadow: 0 10px 30px; */
   margin-bottom: 60px;
   transition: all 500ms ease;
-  height: 50vh;
+  height: 40vh !important;
 }
 
 .sec-title p{
