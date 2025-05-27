@@ -10425,12 +10425,15 @@ display: none !important;
     padding: 69px 30px 52px 100px;
     margin-top: -105px;
     z-index: 1;
-    height: 100vh !important;
+    height: 95vh !important;
 }
 .product-img img {
     width: 100%;
     height:auto !important;
 }
+/* .info-inner{
+  height:20vh !important;
+} */
 
 }
 
