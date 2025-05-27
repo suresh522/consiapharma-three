@@ -10431,7 +10431,7 @@ display: none !important;
     width: 100%;
     height:auto !important;
 }
-.info-inner{
+.section-info .inner-info{
   height:90vh !important;
 }
 
