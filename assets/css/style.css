@@ -10274,7 +10274,7 @@ display: none !important;
 .title-page .content-box .shape {
   position: absolute;
   left: 0px;
-  top: 10px !important;
+  top: 15px !important;
   width: 100%;
   height: 140px !important;
   margin: 0 auto;
@@ -10314,7 +10314,7 @@ display: none !important;
   /* box-shadow: 0 10px 30px; */
   margin-bottom: 30px !important;
   transition: all 500ms ease;
-  height: 25% !important;
+  height: 20% !important;
 }
 
 
@@ -10328,7 +10328,7 @@ display: none !important;
   /* box-shadow: 0 10px 30px; */
   margin-bottom: 30px !important;
   transition: all 500ms ease;
-  height: 25% !important;
+  height: 20% !important;
 }
 
 
@@ -10343,7 +10343,7 @@ display: none !important;
   box-shadow: 0 10px 30px; */
   margin-bottom: 60px;
   transition: all 500ms ease;
-  height: 25% !important;
+  height: 20% !important;
 }
 
 .sec-title p{
